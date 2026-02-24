@@ -1,95 +1,109 @@
 # Nexus HR — Employee Management Platform
 
-A fully-featured ReactJS application built as a company assignment submission.
-Demonstrates clean architecture, routing, API integration, webcam capture, data visualisation, and interactive maps.
+> ReactJS Assignment Submission for Jotish
+
+A fully functional React SPA built as part of the Jotish engineering assignment. Covers all 4 required screens plus bonus Salary Graph and Map View.
 
 ---
 
-## Tech Stack
+## 🚀 Live Demo
 
-| Concern        | Library               |
-|----------------|-----------------------|
-| Framework      | React 18 + Vite       |
-| Routing        | react-router-dom v6   |
-| HTTP client    | Axios                 |
-| Charts         | Recharts              |
-| Maps           | react-leaflet         |
-| Camera         | react-webcam          |
-| Styling        | Tailwind CSS v3       |
-| Auth state     | Context API           |
+> Add your deployed link here (Vercel / Netlify / etc.)
 
 ---
 
-## Screens
+## 📋 Assignment Requirements
 
-| Route           | Description                                      |
-|-----------------|--------------------------------------------------|
-| `/`             | Login — validates `testuser` / `Test123`         |
-| `/list`         | Employee directory — table ⟷ card toggle, search |
-| `/details/:id`  | Employee profile + webcam photo capture          |
-| `/photo`        | Photo result with download option                |
-| `/graph`        | Recharts bar chart of top 10 salaries            |
-| `/map`          | react-leaflet map with city markers              |
+| Requirement | Status |
+|---|---|
+| Login page with validation (testuser / Test123) | ✅ Done |
+| List page with API data | ✅ Done |
+| Table + Card grid toggle | ✅ Done |
+| Search filter | ✅ Done |
+| Details page with all employee info | ✅ Done |
+| Camera capture using webcam | ✅ Done |
+| Photo Result page | ✅ Done |
+| Salary Bar Graph (Bonus) | ✅ Done |
+| Map View with city markers (Bonus) | ✅ Done |
 
 ---
 
-## Project Structure
+## 🛠 Tech Stack
+
+| Concern | Library |
+|---|---|
+| Framework | React 18 + Vite |
+| Routing | react-router-dom v6 |
+| HTTP Client | Axios |
+| Charts | Recharts |
+| Maps | react-leaflet |
+| Camera | react-webcam |
+| Styling | Tailwind CSS v3 |
+| Auth State | React Context API |
+
+---
+
+## 📁 Folder Structure
 
 ```
 src/
 ├── components/
-│   ├── Navbar.jsx          # Top navigation bar
-│   ├── ProtectedRoute.jsx  # Auth guard for private routes
-│   ├── EmployeeTable.jsx   # Data table view
-│   ├── EmployeeCard.jsx    # Card grid view
-│   ├── CameraCapture.jsx   # Webcam capture UI
-│   └── Spinner.jsx         # Loading indicator
+│   ├── Navbar.jsx            # Top navigation bar
+│   ├── ProtectedRoute.jsx    # Auth guard for private routes
+│   ├── EmployeeTable.jsx     # Table view
+│   ├── EmployeeCard.jsx      # Card grid view
+│   ├── CameraCapture.jsx     # Webcam UI
+│   └── Spinner.jsx           # Loading indicator
 │
 ├── pages/
-│   ├── Login.jsx           # Public login form
-│   ├── List.jsx            # Employee list page
-│   ├── Details.jsx         # Employee detail + camera
-│   ├── PhotoResult.jsx     # Captured photo display
-│   ├── Graph.jsx           # Salary bar chart
-│   └── MapView.jsx         # Leaflet map
+│   ├── Login.jsx             # Route: /
+│   ├── List.jsx              # Route: /list
+│   ├── Details.jsx           # Route: /details/:id
+│   ├── PhotoResult.jsx       # Route: /photo
+│   ├── Graph.jsx             # Route: /graph
+│   └── MapView.jsx           # Route: /map
 │
 ├── services/
-│   └── api.js              # Axios API calls
+│   └── api.js                # Axios + CORS proxy + mock fallback
 │
 ├── context/
-│   └── AuthContext.jsx     # Auth state + login/logout
+│   └── AuthContext.jsx       # Login/logout + sessionStorage
 │
 ├── hooks/
-│   └── useEmployees.js     # Data fetching hook
+│   └── useEmployees.js       # Data fetching hook
 │
-├── App.jsx                 # Route definitions
-├── main.jsx                # Entry point
-└── index.css               # Tailwind + global styles
+├── App.jsx                   # Route definitions
+└── main.jsx                  # Entry point
 ```
 
 ---
 
-## Getting Started
+## ⚙️ Setup & Run
 
-### 1. Install dependencies
+### 1. Clone the repo
+
+```bash
+git clone https://github.com/your-username/nexus-hr.git
+cd nexus-hr
+```
+
+### 2. Install dependencies
 
 ```bash
 npm install
 ```
 
-### 2. Start the development server
+### 3. Start the dev server
 
 ```bash
 npm run dev
 ```
 
-### 3. Open in browser
+Open [http://localhost:5173](http://localhost:5173)
 
-```
-http://localhost:5173
-```
+---
 
-### 4. Login credentials
+## 🔐 Login Credentials
 
 ```
 Username: testuser
@@ -98,33 +112,60 @@ Password: Test123
 
 ---
 
-## API
+## 🌐 API
 
-The employee data is fetched from:
+The employee data is fetched from the Jotish backend:
 
 ```
 POST https://backend.jotish.in/backend_dev/gettabledata.php
 Body: { "username": "test", "password": "123456" }
 ```
 
-All API logic is in `src/services/api.js`. The `useEmployees` hook in `src/hooks/useEmployees.js` manages loading, error, and data state so individual pages stay clean.
+### CORS Fix
+
+The API does not send CORS headers, so direct browser requests are blocked. This is solved using a **Vite dev server proxy** configured in `vite.config.js`:
+
+```js
+server: {
+  proxy: {
+    '/api': {
+      target: 'https://backend.jotish.in',
+      changeOrigin: true,
+      rewrite: (path) => path.replace(/^\/api/, '/backend_dev'),
+    }
+  }
+}
+```
+
+All requests go through `/api/*` → Vite proxies them server-side → no browser CORS issue.
+
+> If the API is still unreachable, the app automatically falls back to 15 realistic mock employees so all features remain fully testable.
 
 ---
 
-## Key Engineering Decisions
+## 📺 Screens
 
-- **Context API** for auth — lightweight, no extra dependencies
-- **sessionStorage** for auth persistence — survives refresh, clears on tab close
-- **Custom hook `useEmployees`** — API calls are centralised, pages don't call Axios directly
-- **Protected routes** via `<ProtectedRoute>` outlet — single guard for all private routes
-- **Normalised field access** — each component handles both API field naming variants (e.g. `emp.name ?? emp.emp_name`) so the app degrades gracefully if the real API shape varies
-- **Tailwind `@layer components`** — reusable classes like `.btn-primary`, `.card`, `.input-field` defined once
+| Screen | Route | Description |
+|---|---|---|
+| Login | `/` | Credential form, validation, error messages |
+| Employee List | `/list` | Table + card view, search filter, API data |
+| Employee Details | `/details/:id` | Full profile, webcam photo capture |
+| Photo Result | `/photo` | Captured image, download + retake options |
+| Salary Graph | `/graph` | Bar chart of top 10 employee salaries |
+| Map View | `/map` | City markers with name + salary popups |
 
 ---
 
-## Build for production
+## 📦 Build for Production
 
 ```bash
 npm run build
 npm run preview
 ```
+
+---
+
+## 👤 Author
+
+**Gurmeet Singh Rathor**  
+gurigurmeet1234567@gmail.com
