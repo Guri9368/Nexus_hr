@@ -165,6 +165,29 @@ npm run preview
 
 ---
 
+## 📸 Screenshots
+
+| Screen | Preview |
+|---|---|
+| Login | ![Login](screenshots/login.png) |
+| Employee List | ![List](screenshots/list.png) |
+| Employee Cards | ![Cards](screenshots/cards.png) |
+| Employee Details | ![Details](screenshots/details.png) |
+| Camera Capture | ![Camera](screenshots/camera.png) |
+| Photo Result | ![Photo](screenshots/photo.png) |
+| Salary Graph | ![Graph](screenshots/graph.png) |
+| Map View | ![Map](screenshots/map.png) |
+
+---
+
+## 🎥 Screen Recording
+
+👉 [Watch full app walkthrough](https://drive.google.com/your-recording-link)
+
+> End-to-end demo: Login → Employee List → Details → Camera → Photo Result → Salary Graph → Map View
+
+---
+
 ## 👤 Author
 
 **Gurmeet Singh Rathor**  
