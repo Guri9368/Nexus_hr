@@ -189,8 +189,8 @@ npm run preview
 
 ## 🎥 Screen Recording
 
-https://drive.google.com/your-recording-link](https://drive.google.com/file/d/1drc-IzZ6S5RelYlotTJVJrK7gJ-wscOZ/view?usp=sharing
-
+[https://drive.google.com/your-recording-link](https://drive.google.com/file/d/1drc-IzZ6S5RelYlotTJVJrK7gJ-wscOZ/view?usp=sharing
+](https://drive.google.com/file/d/1drc-IzZ6S5RelYlotTJVJrK7gJ-wscOZ/view?usp=drive_link)
 
 
 ---
