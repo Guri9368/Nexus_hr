@@ -6,9 +6,7 @@ A fully functional React SPA built as part of the Jotish engineering assignment.
 
 ---
 
-## 🚀 Live Demo
-
-> Add your deployed link here (Vercel / Netlify / etc.)
+ 
 
 ---
 
@@ -42,6 +40,7 @@ A fully functional React SPA built as part of the Jotish engineering assignment.
 | Auth State | React Context API |
 
 ---
+"Real API integrated. Mock fallback activates if CORS blocks the request. All  screens fully functional."
 
 ## 📁 Folder Structure
 
