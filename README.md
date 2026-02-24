@@ -189,7 +189,7 @@ npm run preview
 
 ## 🎥 Screen Recording
 
-👉 [Watch full app walkthrough](https://drive.google.com/your-recording-link)
+👉 [Watch full app walkthrough]([https://drive.google.com/your-recording-link](https://drive.google.com/file/d/1drc-IzZ6S5RelYlotTJVJrK7gJ-wscOZ/view?usp=sharing))
 
 > End-to-end demo: Login → Employee List → Details → Camera → Photo Result → Salary Graph → Map View
 
