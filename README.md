@@ -168,15 +168,22 @@ npm run preview
 
 | Screen | Preview |
 |---|---|
-| Login | ![Login] <img width="1919" height="868" alt="image" src="https://github.com/user-attachments/assets/27d2a4e0-b147-4600-a424-92af5d2ef4de" />
+| Login |  <img width="1919" height="868" alt="image" src="https://github.com/user-attachments/assets/27d2a4e0-b147-4600-a424-92af5d2ef4de" />
  |
-| Employee List | ![List](screenshots/list.png) |
-| Employee Cards | ![Cards](screenshots/cards.png) |
-| Employee Details | ![Details](screenshots/details.png) |
-| Camera Capture | ![Camera](screenshots/camera.png) |
-| Photo Result | ![Photo](screenshots/photo.png) |
-| Salary Graph | ![Graph](screenshots/graph.png) |
-| Map View | ![Map](screenshots/map.png) |
+| Employee List | <img width="1918" height="929" alt="image" src="https://github.com/user-attachments/assets/c4507cd9-74bf-43db-8552-bf2c97bbe8cb" />
+ |
+| Employee Cards | <img width="1919" height="822" alt="image" src="https://github.com/user-attachments/assets/4b112ee9-74ee-483c-b2e3-ea1db361c664" />
+|
+| Employee Details | <img width="1919" height="874" alt="image" src="https://github.com/user-attachments/assets/b36e0657-982e-41b3-850f-98c735749195" />
+ |
+| Camera Capture | <img width="1916" height="978" alt="image" src="https://github.com/user-attachments/assets/3caf134e-ddaa-4d25-8bc7-c650076fb54b" />
+ |
+| Photo Result |<img width="1917" height="846" alt="image" src="https://github.com/user-attachments/assets/0e983379-4d10-43ac-af9f-b3aeaa057666" />
+ |
+| Salary Graph | <img width="1907" height="851" alt="image" src="https://github.com/user-attachments/assets/f9936826-b571-47ca-a2b1-5ef346ec4a46" />
+ |
+| Map View |<img width="1919" height="854" alt="image" src="https://github.com/user-attachments/assets/16f0e946-bc53-48ec-bb42-16c2412a479c" />
+ |
 
 ---
 
