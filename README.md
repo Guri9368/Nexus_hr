@@ -168,7 +168,8 @@ npm run preview
 
 | Screen | Preview |
 |---|---|
-| Login | ![Login](screenshots/login.png) |
+| Login | ![Login] <img width="1919" height="868" alt="image" src="https://github.com/user-attachments/assets/27d2a4e0-b147-4600-a424-92af5d2ef4de" />
+ |
 | Employee List | ![List](screenshots/list.png) |
 | Employee Cards | ![Cards](screenshots/cards.png) |
 | Employee Details | ![Details](screenshots/details.png) |
